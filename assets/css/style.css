@@ -1,8 +1,8 @@
 body {
   background-color: var(--background);
   margin: 0;
-    font-family: Arial, sans-serif;
-    padding: 5px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
   }
 
 :root {
@@ -21,7 +21,6 @@ body {
   align-items: center;
 }
 h1{
-  
   display: flex;
   justify-content: center;
   margin: -10px;
@@ -42,6 +41,12 @@ h1{
   border: 1px solid var(--yellow);
   width: 344px;
   height: 39px;
+}
+.search-container{
+  width: 300px;
+  margin: 0 auto; 
+  border-radius: 25px; 
+  padding: 10px;
 }
 /* FOOTER */
 
