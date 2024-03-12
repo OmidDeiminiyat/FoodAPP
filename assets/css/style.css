@@ -7,5 +7,14 @@ body {
   }
 
 :root {
-  
+  --primary: #E8820A;
+  --yellow: #F5DE12; 
+  --stroke: #4D2C1C;
+  --search: #FAAA33;
+  --black: #000000;
+  --background: #EEEBE7;
+
 }
+
+
+/* FOOTER */
