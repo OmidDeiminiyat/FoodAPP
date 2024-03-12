@@ -3,46 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodApp</title>
+    <title>Yummy - Yummy FoodApp</title>
     <link rel="icon" href="assets/images/Frame 4.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-
-    <!-- HEADER -->
-    <header class="main-header">
-        <img class="logo" onclick="LogoCallback()" src="assets/images/Frame 4.png">
-            <h1>Yummy - Yummy</h1>
-    </header>
-
-    <div class="search-container">
-        <input type="text" class="search-input" placeholder="Søg">
+    <div class="container">
+        <!-- HEADER -->
+        <header class="main-header">
+            <img class="logo" onclick="LogoCallback()" src="assets/images/Frame 4.png">
+            <h1 onclick="LogoCallback()">Yummy - Yummy</h1>
+            <img id="burger-icon" src="assets/images/burgericon.svg">
+        </header>
+        <!-- SEARCH -->
+        <section class="search-container">
+            <input type="text" class="search-input" placeholder="Søg">
+        </section>
+        <main>
+            <section id="main-view">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, odit corrupti dicta assumenda debitis ipsum quae eveniet aspernatur suscipit optio! Ex omnis, similique ratione reiciendis sit eos dolorum dolor eveniet.</p>
+                <p>Dicta dolor obcaecati, eligendi animi placeat fuga? Odio quisquam, optio earum sit tenetur iure voluptas cupiditate nesciunt odit, nobis sequi eaque consectetur totam, minus ducimus hic veritatis blanditiis laudantium! Repellendus?</p>
+                <p>Fugiat, culpa! Molestiae tempora velit modi ullam quod, temporibus quidem recusandae sapiente tenetur quo laborum quibusdam nostrum aliquid possimus exercitationem iure maiores explicabo commodi ipsam natus quisquam unde ab labore?</p>
+            </section>
+        </main>
+        <!-- FOOTER --> 
+        <footer class="footer-main">
+            <!-- LEFT -->
+            <div class="footer-left">
+                <h2>Sider:</h2>
+                <ul>
+                    <li>Forside</li>
+                    <li>Om os</li>
+                    <li>Kontakt</li>
+                </ul>
+            </div>
+            <!-- RIGHT -->
+            <div class="footer-right">
+                <div class="footer-content">
+                    <img class="footer-logo" src="assets/images/Frame 4.png" alt="">
+                    <p>Yummy - Yummy</p>
+                </div>
+                <ul class="social-media-icons">
+                    <li><img src="assets/images/Vector.png" alt="facebook"></li>
+                    <li><img src="assets/images/Vector-1.png" alt="twitter"></li>
+                    <li><img src="assets/images/Vector-2.png" alt="youtube"></li>
+                </ul>
+            </div>
+        </footer>
     </div>
-
-    <!-- FOOTER --> 
-    <footer class="footer-main">
-        <!-- LEFT -->
-        <div class="footer-left">
-            <h2>Sider:</h2>
-            <ul>
-                <li>Forside</li>
-                <li>Om os</li>
-                <li>Kontakt</li>
-            </ul>
-        </div>
-        <!-- RIGHT -->
-       <div class="footer-right">
-        <div class="footer-content">
-            <img class="footer-logo" src="assets/images/Frame 4.png" alt="">
-            <p>Yummy - Yummy</p>
-        </div>
-        <ul class="social-media-icons">
-            <li><img src="assets/images/Vector.png" alt="facebook"></li>
-            <li><img src="assets/images/Vector-1.png" alt="twitter"></li>
-            <li><img src="assets/images/Vector-2.png" alt="youtube"></li>
-        </ul>
-    </div>
-    </footer>
 </body>
 </html>
