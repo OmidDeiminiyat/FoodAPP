@@ -15,8 +15,15 @@ body {
   --search: #FAAA33;
   --black: #000000;
   --background: #EEEBE7;
+  --Yummyletterspacing: 6%;
 
 }
 h1
 
 /* FOOTER */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--primary);
+}
