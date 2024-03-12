@@ -18,7 +18,11 @@ body {
   --Yummyletterspacing: 6%;
 
 }
-h1
+h1{
+  color: var(--yellow);
+  stroke: var(--stroke);
+}
+
 
 /* FOOTER */
 
