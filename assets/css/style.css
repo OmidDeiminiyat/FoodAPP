@@ -15,6 +15,35 @@ body {
   --Yummyletterspacing: 6%;
 
 }
+.main-header{
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+h1{
+ 
+  display: flex;
+  justify-content: center;
+  margin: -10px;
+  padding: 0;
+  color: var(--yellow);
+  -webkit-text-stroke: 1px var(--stroke);
+ 
+}
+.logo{
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 20px;
+ 
+}
+.search-input{
+  border-radius: 25px;
+  border: 1px solid var(--yellow);
+  width: 344px;
+  height: 39px;
+}
+har genvejsmenu
 
 
 /* FOOTER */  
