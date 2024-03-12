@@ -30,4 +30,12 @@ h1{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: var(--primary);
+  border-radius: 15px;
+}
+
+.footer-right p {
+  color: var(--yellow);
+  font-weight: bold;
+  -webkit-text-stroke: 1px var(--stroke);
+  text-stroke: 1px var(--stroke);
 }
