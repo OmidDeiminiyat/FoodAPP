@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&display=swap');
+body {
+  background-color: var(--background);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  }
 
 :root {
   --primary: #E8820A;
@@ -8,98 +13,38 @@
   --black: #000000;
   --background: #EEEBE7;
   --Yummyletterspacing: 6%;
+
 }
-
-body {
-  background-color: var(--background);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 5px;
-}
-
-/* SITE CONTAINER */
-
-.container {
-  margin: 0 auto;
-  max-width: 400px;
-  border: 1px solid #000;
-}
-
-.main-header {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
+.main-header{
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
-  margin: auto;
 }
-
-h1 {
-  font-family: "Akshar", sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0;
+h1{
+ 
+  display: flex;
+  justify-content: center;
+  margin: -10px;
   padding: 0;
   color: var(--yellow);
-  /* -webkit-text-stroke: 1px ; */
-  text-shadow: 
-    2px 0 0 var(--stroke), /*right */
-    0 2px 0 var(--stroke), /*top */
-    -1px 0 0 var(--stroke), /*left */
-    0 -1px 0 var(--stroke); /*bottom */
+  -webkit-text-stroke: 1px var(--stroke);
+ 
 }
-
-.logo {
-  width: 45px;
-  height: 45px;
+.logo{
+  width: 50px;
+  height: auto;
   cursor: pointer;
-  /* margin-right: 20px; */
+  margin-right: 20px;
+ 
 }
-
-#burger-icon {
-  width: 45px;
-  height: 35px;
-}
-
-/* SEARCH */
-
-.search-container {
-  width: 100%;
-  display: grid;
-  place-items: center;
-}
-
-.search-input {
+.search-input{
   border-radius: 25px;
   border: 1px solid var(--yellow);
-  width: 90%;
-  height: 40px;
-  padding-left: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  width: 344px;
+  height: 39px;
 }
 
-.search-container input::placeholder {
-  font-weight: bold;
-  color: #F4AA41;
-}
 
-.search-container input:focus {
-  font-weight: bold;
-  color: #F4AA41;
-  outline: none;
-}
-
-/* MAIN VIEW */
-
-#main-view {
-  margin: auto;
-  padding: 10px;
-  width: 90%;
-  height: auto;
-  background: #ffffff;
-  border-radius: 25px;
-  margin-bottom: 5px;
-}
 
 /* FOOTER */  
 
@@ -109,8 +54,6 @@ h1 {
   background-color: var(--primary);
   border-radius: 15px;
   padding: 10px;
-  width: 90%;
-  margin: auto;
 }
 
 .footer-left ul {
