@@ -217,6 +217,7 @@ function openMenu() {
     const menu = document.querySelector('.menu');
     console.log(menu);
     menu.classList.toggle('active');
+    openDialog();
 
 }
 
@@ -225,3 +226,16 @@ function LogoCallback() {
   fetchRandomMeals(6);
 }
 
+
+
+function openDialog() {
+  document.getElementById('dialog').style.display = 'block';
+}
+
+function closeDialog() {
+  document.getElementById('dialog').style.display = 'none';
+}
+
+function redirectToMain() {
+  window.location.href = "index.html";
+}
