@@ -131,6 +131,34 @@ h1 {
   background-color:var(--yellow);
 }
 
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшил минимальную ширину */
+  gap: 20px;
+}
+
+.searchMeal {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--black);
+  overflow: hidden;
+}
+
+.searchMeal img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-height: 200px; 
+}
+
+.searchMeal h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
 
 
 /* MAIN VIEW */
@@ -215,7 +243,6 @@ h1 {
 }
 .text2{
   font-size: 26px;
-  margin-top: -10px;
 }
 .ingredient{
   width: 345px;
