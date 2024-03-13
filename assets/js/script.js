@@ -123,12 +123,9 @@ document.addEventListener("DOMContentLoaded", function() {
                   searchResultsDiv.innerHTML = '<p>No results found</p>';
               } else {
                   const meals = data.meals;
-<<<<<<< HEAD
-                  const mealList = meals.map(meal => `<div onclick="CallForsearch('${meal.idMeal}')"><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
-=======
-                  const mealList = meals.map(meal => 
-                    `<div class="searchMeal "><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
->>>>>>> e3dbd4d5063887287674e20dd8957cbeeeb6ed07
+
+                  const mealList = meals.map(meal => `<div class="searchMeal" onclick="CallForsearch('${meal.idMeal}')"><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+
                   searchResultsDiv.innerHTML = mealList;
               }
           })
@@ -339,4 +336,23 @@ function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
