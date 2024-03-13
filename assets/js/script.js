@@ -87,9 +87,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <h2>${product.strMeal}</h2>
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="ingredient">${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}, ${product.strIngredient4 }   </p>
-            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
             <p class="text1">Ingredienser:</p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text2">Instruktioner:</p>
             <p>${product.strInstructions}</p>
           </div>
         `;
@@ -122,7 +123,12 @@ document.addEventListener("DOMContentLoaded", function() {
                   searchResultsDiv.innerHTML = '<p>No results found</p>';
               } else {
                   const meals = data.meals;
+<<<<<<< HEAD
                   const mealList = meals.map(meal => `<div onclick="CallForsearch('${meal.idMeal}')"><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+=======
+                  const mealList = meals.map(meal => 
+                    `<div class="searchMeal "><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+>>>>>>> e3dbd4d5063887287674e20dd8957cbeeeb6ed07
                   searchResultsDiv.innerHTML = mealList;
               }
           })
