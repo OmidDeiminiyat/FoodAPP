@@ -397,6 +397,11 @@ function closeDialog() {
   document.getElementById('dialog').style.display = 'none';
 }
 
+// REDIRECTION
 function redirectToMain() {
   window.location.href = "index.html";
+}
+
+function redirectToAPI() {
+  window.location.href = 'https://www.themealdb.com/api.php';
 }
