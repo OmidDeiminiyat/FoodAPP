@@ -83,14 +83,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
  
         newCont.innerHTML = `
-          <div>
+          <div class="details">
             <h2>${product.strMeal}</h2>
             
-            <img src="${product.strMealThumb}" alt="${product.strMeal}" style="max-width: 200px;">
-            <p>${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}   </p>
+            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+            <p class="ingredient">${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}, ${product.strIngredient4 }   </p>
             <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text1">Ingredienser:</p>
             <p>${product.strInstructions}</p>
-            <h1>${product.strIngredient8}</h1>
           </div>
         `;
     }

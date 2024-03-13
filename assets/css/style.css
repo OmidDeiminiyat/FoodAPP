@@ -176,7 +176,37 @@ h1 {
   font-size: larger;
 } 
 
+/*STYLE RECIPE DETAILS*/
 
+.details h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #141414;
+}
+.details img{
+  width: 330px;
+  height: 330px;
+  border-radius: 10px;
+  margin-left: 2rem;
+}
+.details p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28px;
+  margin-right: 24px;
+  font-style: up;
+}
+.text1{
+  font-size: 28px;
+}
+.ingredient{
+  width: 345px;
+  height: 73px;
+  background-color: #D9d9d9;
+  border-radius: 20px;
+}
 /* FOOTER */  
 
 .footer-main {
