@@ -159,6 +159,7 @@ h1 {
   margin-bottom: 5px;
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .footer-right {
@@ -181,7 +182,7 @@ h1 {
 
 .footer-right p {
   color: var(--yellow);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   -webkit-text-stroke: 1px var(--stroke);
   text-stroke: 1px var(--stroke);
@@ -197,13 +198,15 @@ h1 {
 }
 
 .footer-right ul li {
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 .footer-right ul li img {
   width: 30px; 
   height: 30px;
   margin-right: 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 
