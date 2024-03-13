@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
 
-/*
+
 
 // ftch all categories
 document.addEventListener("DOMContentLoaded", function() {
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function createCategoryView(categories) {
-    const no1Container = document.getElementById('no1');
+    const no1Container = document.getElementById('GetCategories');
 
     if (!categories || categories.length === 0) {
       no1Container.innerHTML = "<p>No categories found.</p>";
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function() {
     no1Container.appendChild(ul);
   }
 
-*/
+
 
 
 
