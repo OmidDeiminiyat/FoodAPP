@@ -122,7 +122,8 @@ document.addEventListener("DOMContentLoaded", function() {
                   searchResultsDiv.innerHTML = '<p>No results found</p>';
               } else {
                   const meals = data.meals;
-                  const mealList = meals.map(meal => `<div><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+                  const mealList = meals.map(meal => 
+                    `<div class="searchMeal "><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
                   searchResultsDiv.innerHTML = mealList;
               }
           })
