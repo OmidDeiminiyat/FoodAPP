@@ -199,7 +199,14 @@ h1 {
   font-style: up;
 }
 .text1{
+  font-size: 20px;
+}
+.text2{
   font-size: 28px;
+}
+.ingredient{
+  margin: 5px;
+  margin-left: 10px;
 }
 .ingredient{
   width: 345px;
