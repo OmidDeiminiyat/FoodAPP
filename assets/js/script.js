@@ -126,51 +126,11 @@ function openMenu() {
     const menu = document.querySelector('.menu');
     console.log(menu);
     menu.classList.toggle('active');
+
 }
-<<<<<<< HEAD
-// JavaScript Buttons
-document.getElementById('button1').addEventListener('click', function() {
-    alert('Button1');
-  });
-  
-  document.getElementById('button2').addEventListener('click', function() {
-    alert('Button2');
-  });
-  
-  document.getElementById('button3').addEventListener('click', function() {
-    alert('button3');
-    
-  });
-  document.getElementById('button4').addEventListener('click', function() {
-    alert('Button4');
-  });
-  
-  document.getElementById('button5').addEventListener('click', function() {
-    alert('Button5');
-  });
-  
-  document.getElementById('button6').addEventListener('click', function() {
-    alert('button6');
-    
-  });
-  document.getElementById('button7').addEventListener('click', function() {
-    alert('Button7');
-  });
-  
-  document.getElementById('button8').addEventListener('click', function() {
-    alert('Button8');
-  });
-  
-  document.getElementById('button9').addEventListener('click', function() {
-    alert('button9');
-    
-  });
-  
-  
-=======
 
 function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
 }
->>>>>>> 2e6514651bf1982a079531fdf34591e91c4c8e2f
+
