@@ -123,7 +123,9 @@ document.addEventListener("DOMContentLoaded", function() {
                   searchResultsDiv.innerHTML = '<p>No results found</p>';
               } else {
                   const meals = data.meals;
-                  const mealList = meals.map(meal => `<div><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+
+                  const mealList = meals.map(meal => `<div class="searchMeal" onclick="CallForsearch('${meal.idMeal}')"><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+
                   searchResultsDiv.innerHTML = mealList;
               }
           })
@@ -135,6 +137,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+  // after click on a food we send food Id with onclick function to get detail of specefic food
+
+  function CallForsearch(SearchDetail) {
+    ClearApp();
+    ClearSecondApp();
+        const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${SearchDetail}`;
+         
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            displayProductDetails(data.meals[0]);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+      }
+  
+      function displayProductDetails(product) {
+        const searchDisplay = document.getElementById('recipe-container');
+  
+        console.log(product);
+     
+        if (!product) {
+          searchDisplay.innerHTML = "<p>No product found.</p>";
+          return;
+        }
+ 
+        searchDisplay.innerHTML = `
+          <div class="details">
+            <h2>${product.strMeal}</h2>
+            
+            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+            <p class="ingredient">${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}, ${product.strIngredient4 }   </p>
+            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text1">Ingredienser:</p>
+            <p>${product.strInstructions}</p>
+          </div>
+        `;
+    }
+
+
+
+
+
+    
 
 /*
 
@@ -195,12 +249,70 @@ document.addEventListener("DOMContentLoaded", function() {
         recipeContainer.innerHTML = '';
     }
 
+    function ClearSecondApp(){
+      const searchResultsDiv = document.getElementById('searchResults');
+      searchResultsDiv.innerHTML = '';
+  }
 
 
 
 
 
+  //Omid code 100 get letter and fetch data 
+  function fetchMealsByFirstLetter(letter) {
+    ClearApp()
+    
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
+    return fetch(url)
+      .then(response => {
+    
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
 
+        return response.json();
+      })
+      .then(data => {
+        displayMeals(data.meals);
+      })
+      .catch(error => {
+
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+  
+  
+  // get letter after click and send to Modal for fetch data
+  function pushed(value) {
+    console.log(value);
+
+    fetchMealsByFirstLetter(value)
+    .then(data => {
+
+      console.log(data);
+    });
+}
+
+
+// Here we create a view of foods which acourding to code 100
+function displayMeals(meals) {
+  const recipeContainer = document.getElementById('recipe-container');
+
+  if (!meals || meals.length === 0) {
+    recipeContainer.innerHTML = "<p>No meals found.</p>";
+    return;
+  }
+
+  recipeContainer.innerHTML = meals.map(meal => `
+    <div>
+      
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="max-width: 200px;">
+      <h2 onclick="secondLink('${meal.idMeal}')">${meal.strMeal}</h2>
+    </div>
+  `).join('');
+}
+
+ // Omid code 100 end
 
 
 
@@ -224,4 +336,23 @@ function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -21,29 +21,29 @@
         <section class="search-container">
             <section class="search-container">
                 <input class="search-input" type="text" id="searchInput" placeholder="Søg...">
-                <div id="searchResults"></div>
+                <div id="searchResults"  class="search-results"></div>
             </section>
         </section>
         <section class="buttons">
             <div>
-                <button id="button1">A</button>
-                <button id="button2">B</button>
-                <button id="button3">C</button>
+                <button onclick="pushed('a')" id="button1">A</button>
+                <button  onclick="pushed('b')" id="button2">B</button>
+                <button onclick="pushed('c')" id="button3">C</button>
             </div>
             <div> 
-            <button id="button4">D</button>
-            <button id="button5">E</button>
-            <button id="button6">F</button>
+            <button onclick="pushed('d')" id="button4">D</button>
+            <button onclick="pushed('e')" id="button5">E</button>
+            <button onclick="pushed('f')" id="button6">F</button>
         </div>
         <div>
-            <button id="button7">G</button>
-            <button id="button8">H</button>
-            <button id="button9">I</button> 
+            <button onclick="pushed('g')" id="button7">G</button>
+            <button onclick="pushed('h')" id="button8">H</button>
+            <button onclick="pushed('i')" id="button9">I</button> 
         </div>
         <div>
-            <button id="button7">J</button>
-            <button id="button8">K</button>
-            <button id="button9">L</button> 
+            <button onclick="pushed('j')" id="button7">J</button>
+            <button onclick="pushed('k')" id="button8">K</button>
+            <button onclick="pushed('l')" id="button9">L</button> 
         </div>
         </section>
         <main>
@@ -59,6 +59,7 @@
             <!-- LEFT -->
             <div class="footer-left">
                 <h2>Sider:</h2>
+                <div class="footer-hr"></div>
                 <ul>
                     <li>Forside</li>
                     <li>Om os</li>
