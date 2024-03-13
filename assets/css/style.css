@@ -33,6 +33,7 @@ body {
   margin: auto;
 }
 
+
 h1 {
   font-family: "Akshar", sans-serif;
   font-weight: bold;
@@ -59,10 +60,22 @@ h1 {
   border-radius: 50%; */
 }
 
+/* BURGER MENU */
+
 #burger-icon {
   width: 45px;
   height: 35px;
-  margin-top: 12px;
+  margin-top: 12px; 
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+}
+
+.menu.active {
+  display: block;
 }
 
 /* SEARCH */
@@ -75,7 +88,7 @@ h1 {
 
 .search-input {
   border-radius: 25px;
-  border: 1px solid var(--yellow);
+  border: 1px solid var(--primary);
   width: 90%;
   height: 40px;
   padding-left: 20px;

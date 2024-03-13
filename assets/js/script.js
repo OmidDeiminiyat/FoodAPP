@@ -118,3 +118,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+// Burger Menu
+
+function openMenu() {
+    console.log("Menu clicked");
+    const menu = document.querySelector('.menu');
+    console.log(menu);
+    menu.classList.toggle('active');
+}
+
+function LogoCallback() {
+  ClearApp();
+  fetchRandomMeals(6);
+}
