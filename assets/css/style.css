@@ -445,6 +445,31 @@ height: 345px;
   font-size: 16px;
 }
 
-/* .dialog-content .api-button:hover {
-  background-color: var(--yellow); 
-} */
+
+/* BURGER CATEGORY */
+
+#GetCategories {
+  margin-top: 2rem;
+}
+
+#GetCategories ul {
+  list-style: none;
+  padding: 0;
+}
+
+#GetCategories ul li {
+  display: inline-block;
+  margin-right: 10px; 
+  text-decoration: none;
+  color: var(--background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+#GetCategories ul li:hover {
+  background-color: var(--yellow);
+}
