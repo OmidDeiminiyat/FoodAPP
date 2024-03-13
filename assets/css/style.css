@@ -39,6 +39,7 @@ h1 {
   cursor: pointer;
   margin: 0;
   padding: 0;
+  margin-top: 12px;
   color: var(--yellow);
   /* -webkit-text-stroke: 1px ; */
   text-shadow: 
@@ -53,11 +54,15 @@ h1 {
   height: 45px;
   cursor: pointer;
   /* margin-right: 20px; */
+  margin-top: 12px ;
+  /* border: 1px solid #000;
+  border-radius: 50%; */
 }
 
 #burger-icon {
   width: 45px;
   height: 35px;
+  margin-top: 12px;
 }
 
 /* SEARCH */
@@ -91,7 +96,7 @@ h1 {
 
 /* MAIN VIEW */
 
-#main-view {
+/* #main-view {
   margin: auto;
   padding: 10px;
   width: 90%;
@@ -99,7 +104,39 @@ h1 {
   background: #ffffff;
   border-radius: 25px;
   margin-bottom: 5px;
+} */
+
+/* Style recipe cards */
+.recipe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
+
+/* Style the recipe card */
+.recipe-item {
+  max-width: 400px; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+  text-align: center;
+  margin: 10px; 
+}
+
+.recipe-img img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.recipe-title{
+  background-color:#E8820A;
+  justify-content: center;
+  color: whitesmoke;
+  border-radius: 8px;
+  font-size: larger;
+} 
+
 
 /* FOOTER */  
 
