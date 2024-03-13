@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
             <p class="text1">Ingredienser:</p>
-            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1}, ${product.strMeasure2} ${product.strIngredient2}, ${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4 }   </p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1}, ${product.strMeasure2} ${product.strIngredient2}, ${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4 } ${product.strMeasure5} ${product.strIngredient5 } ${product.strMeasure6} ${product.strIngredient6 }  ${product.strMeasure7} ${product.strIngredient7 } ${product.strMeasure8} ${product.strIngredient8 } ${product.strMeasure9} ${product.strIngredient9 } ${product.strMeasure10} ${product.strIngredient10 } ${product.strMeasure11} ${product.strIngredient11 }</p>
             
             <p class="text2">Instruktioner:</p>
             <p>${product.strInstructions}</p>
