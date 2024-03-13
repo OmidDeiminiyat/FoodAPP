@@ -131,6 +131,35 @@ h1 {
   background-color:var(--yellow);
 }
 
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшил минимальную ширину */
+  gap: 20px;
+}
+
+.searchMeal {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--black);
+  overflow: hidden;
+}
+
+.searchMeal img {
+  width: 100%;
+  
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-height: 200px; 
+}
+
+.searchMeal h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
 
 
 /* MAIN VIEW */
@@ -177,18 +206,29 @@ h1 {
 } 
 
 /*STYLE RECIPE DETAILS*/
-
+.details{
+  background-color: whitesmoke;
+  border: 1px solid #F4AA41;;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
 .details h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #141414;
+  color: whitesmoke;
+  background-color: #E8820A;
+  margin: 26px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 .details img{
-  width: 330px;
-  height: 330px;
+  width: 340px;
+  height: 340px;
   border-radius: 10px;
-  margin-left: 2rem;
+  margin: 1.8rem;
+  margin-top: -10px;
 }
 .details p{
   display: flex;
@@ -196,17 +236,26 @@ h1 {
   align-items: center;
   margin-left: 28px;
   margin-right: 24px;
-  font-style: up;
 }
 .text1{
-  font-size: 28px;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-top: -10px;
+}
+.text2{
+  font-size: 26px;
+  margin-top: -10px;
 }
 .ingredient{
   width: 345px;
   height: 73px;
   background-color: #D9d9d9;
-  border-radius: 20px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
 }
+
+
 /* FOOTER */  
 
 .footer-main {
@@ -219,9 +268,26 @@ h1 {
   margin: auto;
 }
 
+.footer-main h2 {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.footer-hr {
+  border-bottom: 2px solid var(--black);
+  width: 80%; 
+  margin-top: -2.5rem;
+}
+
+.footer-left {
+  padding-bottom: 10px; 
+  margin-right: 10px; 
+}
+
 .footer-left ul {
   list-style: none;
   padding: 0;
+  margin-top: 1rem;
 }
 
 .footer-left li {
@@ -237,11 +303,23 @@ h1 {
   gap: 10px; 
 }
 
+.footer-content {
+  border-bottom: 2px solid var(--black);
+  margin-top: 10px;
+  margin-bottom: 4rem;
+}
+
 .footer-right .footer-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -10px;
+  margin-top: -2rem;
+}
+
+.footer-right .footer-logo,
+.footer-right p {
+  margin-top: 0.4rem;
+  margin-bottom: -1rem;
 }
 
 .footer-right .footer-logo {
@@ -256,7 +334,6 @@ h1 {
   -webkit-text-stroke: 1px var(--stroke);
   text-stroke: 1px var(--stroke);
 }
-
 
 .footer-right ul {
   display: flex;
@@ -278,4 +355,6 @@ h1 {
   cursor: pointer;
 }
 
-
+.footer-right .social-media-icons {
+  margin-top: -3rem;
+}
