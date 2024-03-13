@@ -1,9 +1,4 @@
-body {
-  background-color: var(--background);
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding: 5px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&display=swap');
 
 :root {
   --primary: #E8820A;
@@ -13,38 +8,98 @@ body {
   --black: #000000;
   --background: #EEEBE7;
   --Yummyletterspacing: 6%;
+}
 
+body {
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 5px;
 }
-.main-header{
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
+
+/* SITE CONTAINER */
+
+.container {
+  margin: 0 auto;
+  max-width: 400px;
+  border: 1px solid #000;
 }
-h1{
- 
+
+.main-header {
+  width: 90%;
   display: flex;
-  justify-content: center;
-  margin: -10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Akshar", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
   padding: 0;
   color: var(--yellow);
-  -webkit-text-stroke: 1px var(--stroke);
- 
+  /* -webkit-text-stroke: 1px ; */
+  text-shadow: 
+    2px 0 0 var(--stroke), /*right */
+    0 2px 0 var(--stroke), /*top */
+    -1px 0 0 var(--stroke), /*left */
+    0 -1px 0 var(--stroke); /*bottom */
 }
-.logo{
-  width: 50px;
-  height: auto;
+
+.logo {
+  width: 45px;
+  height: 45px;
   cursor: pointer;
-  margin-right: 20px;
- 
+  /* margin-right: 20px; */
 }
-.search-input{
+
+#burger-icon {
+  width: 45px;
+  height: 35px;
+}
+
+/* SEARCH */
+
+.search-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.search-input {
   border-radius: 25px;
   border: 1px solid var(--yellow);
-  width: 344px;
-  height: 39px;
+  width: 90%;
+  height: 40px;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
+.search-container input::placeholder {
+  font-weight: bold;
+  color: #F4AA41;
+}
 
+.search-container input:focus {
+  font-weight: bold;
+  color: #F4AA41;
+  outline: none;
+}
+
+/* MAIN VIEW */
+
+#main-view {
+  margin: auto;
+  padding: 10px;
+  width: 90%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 5px;
+}
 
 /* FOOTER */  
 
@@ -54,6 +109,8 @@ h1{
   background-color: var(--primary);
   border-radius: 15px;
   padding: 10px;
+  width: 90%;
+  margin: auto;
 }
 
 .footer-left ul {
@@ -111,3 +168,5 @@ h1{
   height: 30px;
   margin-right: 10px;
 }
+
+
