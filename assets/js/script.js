@@ -322,7 +322,7 @@ function displayMeals(meals) {
 
 
 
-// Burger Menu
+// BURGER MENU
 
 function openMenu() {
     console.log("Menu clicked");
@@ -333,6 +333,7 @@ function openMenu() {
 
 }
 
+// LOG CALLBACK
 function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
@@ -340,44 +341,7 @@ function LogoCallback() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// DIALOG
 function openDialog() {
   document.getElementById('dialog').style.display = 'block';
 }
