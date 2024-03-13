@@ -87,13 +87,101 @@ document.addEventListener("DOMContentLoaded", function() {
             <h2>${product.strMeal}</h2>
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="ingredient">${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}, ${product.strIngredient4 }   </p>
-            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
             <p class="text1">Ingredienser:</p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text2">Instruktioner:</p>
             <p>${product.strInstructions}</p>
           </div>
         `;
     }
+
+
+
+
+
+
+
+
+    //Search function 
+  // here
+
+  const searchInput = document.getElementById('searchInput');
+  const searchResultsDiv = document.getElementById('searchResults');
+
+  searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.trim();
+      if (searchTerm === '') {
+          searchResultsDiv.innerHTML = ''; 
+          return;
+      }
+
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
+          .then(response => response.json())
+          .then(data => {
+              if (data.meals === null) {
+                  searchResultsDiv.innerHTML = '<p>No results found</p>';
+              } else {
+                  const meals = data.meals;
+                  const mealList = meals.map(meal => `<div><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+                  searchResultsDiv.innerHTML = mealList;
+              }
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+              searchResultsDiv.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
+          });
+  });
+
+
+
+
+/*
+
+// ftch all categories
+document.addEventListener("DOMContentLoaded", function() {
+    fetchMealCategories();
+  });
+
+  function fetchMealCategories() {
+    const url = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        createCategoryView(data.meals);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+
+  function createCategoryView(categories) {
+    const no1Container = document.getElementById('no1');
+
+    if (!categories || categories.length === 0) {
+      no1Container.innerHTML = "<p>No categories found.</p>";
+      return;
+    }
+
+    const ul = document.createElement('ul');
+
+    categories.forEach(category => {
+      const li = document.createElement('li');
+      li.textContent = category.strCategory;
+      ul.appendChild(li);
+    });
+
+    no1Container.appendChild(ul);
+  }
+
+*/
+
 
 
 
@@ -106,6 +194,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const recipeContainer = document.getElementById('recipe-container');
         recipeContainer.innerHTML = '';
     }
+
+
+
 
 
 
