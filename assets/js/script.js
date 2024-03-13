@@ -35,3 +35,12 @@ function showListMeal(recipeList) {
         recipeContainer.innerHTML += html;
     });
 }
+
+// Burger Menu
+
+function openMenu() {
+    console.log("Menu clicked");
+    const menu = document.querySelector('.menu');
+    console.log(menu);
+    menu.classList.toggle('active');
+}
