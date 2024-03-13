@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy - Yummy FoodApp</title>
+    <link rel="icon" href="assets/images/Frame 4.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="main-header">
+            <img class="logo" onclick="LogoCallback()" src="assets/images/Frame 4.png">
+            <h1 onclick="LogoCallback()">Yummy - Yummy</h1>
+            <img id="burger-icon" src="assets/images/burgericon.svg" onclick="openMenu()">
+            <nav class="menu" style="display: block;"></nav>
+        </header>
+        <!-- SEARCH -->
+        <section class="search-container">
+            <input type="text" class="search-input" placeholder="Søg">
+        </section>
+        <section class="buttons">
+            <div>
+                <button id="button1">A</button>
+                <button id="button2">B</button>
+                <button id="button3">C</button>
+            </div>
+            <div> 
+            <button id="button4">D</button>
+            <button id="button5">E</button>
+            <button id="button6">F</button>
+        </div>
+        <div>
+            <button id="button7">G</button>
+            <button id="button8">H</button>
+            <button id="button9">I</button> 
+        </div>
+        <div>
+            <button id="button7">J</button>
+            <button id="button8">K</button>
+            <button id="button9">L</button> 
+        </div>
+        </section>
+        <main>
+            <div id="recipe-container">
+            
+            </div>
+        </main>
+        <!-- BURGER CONTENT -->
+        <section id="burger-content"></section>
+        
+        <!-- FOOTER --> 
+        <footer class="footer-main">
+            <!-- LEFT -->
+            <div class="footer-left">
+                <h2>Sider:</h2>
+                <ul>
+                    <li>Forside</li>
+                    <li>Om os</li>
+                    <li>Kontakt</li>
+                </ul>
+            </div>
+            <!-- RIGHT -->
+            <div class="footer-right">
+                <div class="footer-content">
+                    <img class="footer-logo" src="assets/images/Frame 4.png" alt="">
+                    <p>Yummy - Yummy</p>
+                </div>
+                <ul class="social-media-icons">
+                    <li><img src="assets/images/Vector.png" alt="facebook"></li>
+                    <li><img src="assets/images/Vector-1.png" alt="twitter"></li>
+                    <li><img src="assets/images/Vector-2.png" alt="youtube"></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
