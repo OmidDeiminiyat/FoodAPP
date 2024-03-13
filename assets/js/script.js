@@ -102,11 +102,101 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+    //Search function 
+  // here
+
+  const searchInput = document.getElementById('searchInput');
+  const searchResultsDiv = document.getElementById('searchResults');
+
+  searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.trim();
+      if (searchTerm === '') {
+          searchResultsDiv.innerHTML = ''; 
+          return;
+      }
+
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
+          .then(response => response.json())
+          .then(data => {
+              if (data.meals === null) {
+                  searchResultsDiv.innerHTML = '<p>No results found</p>';
+              } else {
+                  const meals = data.meals;
+                  const mealList = meals.map(meal => `<div><h2>${meal.strMeal}</h2><img src="${meal.strMealThumb}" alt="${meal.strMeal}"></div>`).join('');
+                  searchResultsDiv.innerHTML = mealList;
+              }
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+              searchResultsDiv.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
+          });
+  });
+
+
+
+
+/*
+
+// ftch all categories
+document.addEventListener("DOMContentLoaded", function() {
+    fetchMealCategories();
+  });
+
+  function fetchMealCategories() {
+    const url = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        createCategoryView(data.meals);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+
+  function createCategoryView(categories) {
+    const no1Container = document.getElementById('no1');
+
+    if (!categories || categories.length === 0) {
+      no1Container.innerHTML = "<p>No categories found.</p>";
+      return;
+    }
+
+    const ul = document.createElement('ul');
+
+    categories.forEach(category => {
+      const li = document.createElement('li');
+      li.textContent = category.strCategory;
+      ul.appendChild(li);
+    });
+
+    no1Container.appendChild(ul);
+  }
+
+*/
+
+
+
+
+
+
+
+
      //Function for clear app
      function ClearApp(){
         const recipeContainer = document.getElementById('recipe-container');
         recipeContainer.innerHTML = '';
     }
+
+
+
 
 
 
