@@ -127,3 +127,8 @@ function openMenu() {
     console.log(menu);
     menu.classList.toggle('active');
 }
+
+function LogoCallback() {
+  ClearApp();
+  fetchRandomMeals(6);
+}
