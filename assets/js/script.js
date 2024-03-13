@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
 
-/*
+
 
 // ftch all categories
 document.addEventListener("DOMContentLoaded", function() {
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function createCategoryView(categories) {
-    const no1Container = document.getElementById('no1');
+    const no1Container = document.getElementById('GetCategories');
 
     if (!categories || categories.length === 0) {
       no1Container.innerHTML = "<p>No categories found.</p>";
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function() {
     no1Container.appendChild(ul);
   }
 
-*/
+
 
 
 
@@ -304,10 +304,10 @@ function displayMeals(meals) {
   }
 
   recipeContainer.innerHTML = meals.map(meal => `
-    <div class="Letter">
+    <div>
       
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="max-width: 200px;">
-      <h2 onclick="secondLink('${meal.idMeal}')">${meal.strMeal}</h2>
+      <h2>${meal.strMeal}</h2>
     </div>
   `).join('');
 }
@@ -315,6 +315,50 @@ function displayMeals(meals) {
  // Omid code 100 end
 
 
+  // after click on a food we send food Id with onclick function to get detail of specefic food
+
+  function ThirdLink(byLetter) {
+    ClearApp();
+        const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${byLetter}`;
+         
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            DisplayByLetterGet(data.meals[0]);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+      }
+  
+      function DisplayByLetterGet(product) {
+        const newCont = document.getElementById('recipe-container');
+  
+        console.log(product);
+     
+        if (!product) {
+            newCont.innerHTML = "<p>No product found.</p>";
+          return;
+        }
+ 
+        newCont.innerHTML = `
+          <div class="details">
+            <h2>${product.strMeal}</h2>
+            
+            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+            <p class="text1">Ingredienser:</p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text2">Instruktioner:</p>
+            <p>${product.strInstructions}</p>
+          </div>
+        `;
+    }
 
 
 
@@ -322,16 +366,21 @@ function displayMeals(meals) {
 
 
 
-// Burger Menu
+
+
+
+// BURGER MENU
 
 function openMenu() {
     console.log("Menu clicked");
     const menu = document.querySelector('.menu');
     console.log(menu);
     menu.classList.toggle('active');
+    openDialog();
 
 }
 
+// LOG CALLBACK
 function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
@@ -339,20 +388,15 @@ function LogoCallback() {
 
 
 
+// DIALOG
+function openDialog() {
+  document.getElementById('dialog').style.display = 'block';
+}
 
+function closeDialog() {
+  document.getElementById('dialog').style.display = 'none';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function redirectToMain() {
+  window.location.href = "index.html";
+}
