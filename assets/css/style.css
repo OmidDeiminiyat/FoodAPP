@@ -243,7 +243,6 @@ h1 {
 }
 .text2{
   font-size: 26px;
-  margin-top: -10px;
 }
 .ingredient{
   width: 345px;
@@ -357,3 +356,70 @@ h1 {
 .footer-right .social-media-icons {
   margin-top: -3rem;
 }
+
+/* DIALOG */
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.dialog-content {
+  background-color: var(--background);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--stroke);
+  border-radius: 15px;
+  width: 80%;
+}
+
+.close {
+  color: var(--primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--yellow);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dialog-content .home-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dialog-content .home-button:hover {
+  background-color: var(--yellow);
+}
+
+.dialog-content .api-button {
+  background-color: var(--background); 
+  color: var(--stroke);
+  border: 1px solid var(--search);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* .dialog-content .api-button:hover {
+  background-color: var(--yellow); 
+} */
