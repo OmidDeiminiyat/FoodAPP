@@ -254,7 +254,26 @@ h1 {
 }
 
  /*SEARCH BY LETTER*/
-
+ .letter{
+  max-width: 400px; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+  text-align: center;
+  margin: 8px; 
+ }
+.letter img{
+width: 345px;
+height: 345px;
+}
+.letter h2{
+  background-color:#E8820A;
+  justify-content: center;
+  color: whitesmoke;
+  border-radius: 8px;
+  font-size: larger;
+}
 /* FOOTER */  
 
 .footer-main {

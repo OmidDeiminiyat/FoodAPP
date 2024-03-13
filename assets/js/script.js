@@ -304,9 +304,9 @@ function displayMeals(meals) {
   }
 
   recipeContainer.innerHTML = meals.map(meal => `
-    <div>
+    <div class="letter">
       
-      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="max-width: 200px;">
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" >
       <h2>${meal.strMeal}</h2>
     </div>
   `).join('');
