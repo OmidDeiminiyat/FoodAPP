@@ -22,7 +22,6 @@ body {
 .container {
   margin: 0 auto;
   max-width: 400px;
-  border: 1px solid #000;
 }
 
 .main-header {
@@ -106,6 +105,33 @@ h1 {
   color: #F4AA41;
   outline: none;
 }
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.buttons button {
+  display: grid;
+  width: 90%;
+  padding: 5px 10px;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--primary);
+  color: #fff;
+
+}
+.buttons div button {
+  margin: 0 0 1px 0;
+}
+
+.buttons button:hover {
+  background-color:var(--yellow);
+}
+
+
 
 /* MAIN VIEW */
 
@@ -187,7 +213,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: var(--primary);
-  border-radius: 15px;
+  border-radius: 6px;
   padding: 10px;
   width: 90%;
   margin: auto;
