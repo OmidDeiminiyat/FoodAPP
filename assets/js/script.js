@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
             <p class="text1">Ingredienser:</p>
-            <p class="ingredient">${product.strIngredient1}, ${product.strIngredient2}, ${product.strIngredient3}, ${product.strIngredient4 }   </p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
             <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
             <p class="text2">Instruktioner:</p>
             <p>${product.strInstructions}</p>
