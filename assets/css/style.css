@@ -389,3 +389,156 @@ h1 {
 .footer-right .social-media-icons {
   margin-top: -3rem;
 }
+
+
+/* DIALOG */
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.dialog-content {
+  background-color: var(--background);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--stroke);
+  border-radius: 15px;
+  width: 80%;
+}
+
+.close {
+  color: var(--primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--yellow);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dialog-content .home-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dialog-content .home-button:hover {
+  background-color: var(--yellow);
+}
+
+.dialog-content .api-button {
+  background-color: var(--background); 
+  color: var(--stroke);
+  border: 1px solid var(--search);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+/* BURGER CATEGORY */
+
+#GetCategories {
+  margin-top: 2rem;
+}
+
+#GetCategories ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
+
+#GetCategories ul li {
+  display: inline-block;
+  margin-right: 10px; 
+  text-decoration: none;
+  color: var(--background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+#GetCategories ul li:hover {
+  background-color: var(--yellow);
+}
+
+/* MEDIA QUERIES TABLET */
+
+@media (max-width: 750px) { 
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .main-header {
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    margin-left: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin-left: 6rem;
+  }
+
+  .search-input {
+    width: 80%;
+    margin-top: -10px;
+  }
+  
+  #recipe-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-main {
+    width: 95%;
+  }
+  
+  .footer-left h2 {
+    margin-left: 5rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 5rem;
+  }
+}
