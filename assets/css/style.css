@@ -476,35 +476,3 @@ height: 345px;
 
 
 
-@media (max-width:750px){
-  .recipe-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-  }
-  
-  /* Style the recipe card */
-  .recipe-item {
-    max-width: 750px; 
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0000001a;
-    text-align: center;
-    margin: 10px; 
-  }
-  
-  .recipe-img img {
-    max-width: 100%;
-    border-radius: 5px;
-  }
-  .recipe-title{
-    background-color:#E8820A;
-    justify-content: center;
-    color: whitesmoke;
-    border-radius: 8px;
-    font-size: larger;
-  } 
-  
-}
