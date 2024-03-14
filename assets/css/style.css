@@ -20,18 +20,16 @@ body {
 /* SITE CONTAINER */
 
 .container {
-  margin: 0 auto;
+  margin: 0 auto; 
   max-width: 400px;
 }
-
-.main-header {
+  .main-header {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-}
-
+}  
 
 h1 {
   font-family: "Akshar", sans-serif;
@@ -55,8 +53,6 @@ h1 {
   cursor: pointer;
   /* margin-right: 20px; */
   margin-top: 12px ;
-  /* border: 1px solid #000;
-  border-radius: 50%; */
 }
 
 /* BURGER MENU */
@@ -424,7 +420,7 @@ h1 {
   color: white;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px; 
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -444,8 +440,10 @@ h1 {
   cursor: pointer;
   font-size: 16px;
 }
-
-
+.allButtons{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
 /* BURGER CATEGORY */
 
 #GetCategories {
