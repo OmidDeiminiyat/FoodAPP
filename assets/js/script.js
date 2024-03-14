@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <h2>${product.strMeal}</h2>
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="text1">Ingredienser:</p>
+            <p class="text1">Ingredients:</p>
             <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
             
-            <p class="text2">Instruktioner:</p>
+            <p class="text2">Instructions:</p>
             <p>${product.strInstructions}</p>
           </div>
         `;
@@ -170,19 +170,37 @@ document.addEventListener("DOMContentLoaded", function() {
           searchDisplay.innerHTML = "<p>No product found.</p>";
           return;
         }
- 
+
         searchDisplay.innerHTML = `
-          <div class="details">
-            <h2>${product.strMeal}</h2>
-            
-            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="text1">Ingredienser:</p>
-            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1}, ${product.strMeasure2} ${product.strIngredient2}, ${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4 } ${product.strMeasure5} ${product.strIngredient5 } ${product.strMeasure6} ${product.strIngredient6 }  ${product.strMeasure7} ${product.strIngredient7 } ${product.strMeasure8} ${product.strIngredient8 } ${product.strMeasure9} ${product.strIngredient9 } ${product.strMeasure10} ${product.strIngredient10 } ${product.strMeasure11} ${product.strIngredient11 }</p>
-            
-            <p class="text2">Instruktioner:</p>
-            <p>${product.strInstructions}</p>
-          </div>
-        `;
+                                    <div class="details">
+                                      <h2>${product.strMeal}</h2>
+                                      
+                                      <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+                                      <p class="text1">Ingredients:</p>
+                                      ${generateIngredients(product)}
+                                      <p class="text2">Instructions:</p>
+                                      <p>${product.strInstructions}</p>
+                                    </div>
+                                  `;
+
+function generateIngredients(product) {
+  let ingredientsHTML = '';
+  // Iterate over each ingredient and its measurement
+  for (let i = 1; i <= 20; i++) {
+    const ingredient = product[`strIngredient${i}`];
+    const measurement = product[`strMeasure${i}`];
+    // Check if both ingredient and measurement exist
+    if (ingredient && measurement) {
+      // Add the ingredient and measurement to the HTML
+      ingredientsHTML += `<p class="ingredients">${measurement} ${ingredient}</p>`;
+    } else {
+      // If either ingredient or measurement is missing, break the loop
+      break;
+    }
+  }
+  return ingredientsHTML;
+}
+
     }
 
 
@@ -355,10 +373,10 @@ function displayMeals(meals) {
             <h2>${product.strMeal}</h2>
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="text1">Ingredienser:</p>
+            <p class="text1">Ingredients:</p>
             <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
-            <div id=Ingredient><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
-            <p class="text2">Instruktioner:</p>
+            <div id="Ingredient"><img src="${product.strIngredient1}" alt="${product.strIngredient1}" style="max-width: 200px;"> </div>
+            <p class="text2">Instructions:</p>
             <p>${product.strInstructions}</p>
           </div>
         `;
