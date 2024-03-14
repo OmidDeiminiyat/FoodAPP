@@ -466,7 +466,7 @@ height: 345px;
 
 #GetCategories ul li {
   display: inline-block;
-  /* margin-right: 10px;  */
+  margin-right: 10px; 
   text-decoration: none;
   color: var(--background);
   padding: 10px 20px;
@@ -480,16 +480,6 @@ height: 345px;
 #GetCategories ul li:hover {
   background-color: var(--yellow);
 }
-
-
-/*Style Category from burger menu*/
-#GetCategories  ul {
-  display: inline-flex;
-  grid-template-columns: repeat(3fr,1fr);
-  margin:0 -5px;
-}
-
-
 
 /* MEDIA QUERIES TABLET */
 
@@ -528,7 +518,7 @@ height: 345px;
   #recipe-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* Adjust the gap between recipe items */
+    gap: 20px;
   }
 
   .footer-main {
