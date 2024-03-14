@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
             
             <p class="text2">Instructions:</p>
-            <p>${product.strInstructions}</p>
+            <p class="text3">${product.strInstructions}</p>
           </div>
         `;
     }
