@@ -185,22 +185,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function generateIngredients(product) {
   let ingredientsHTML = '';
-  // Iterate over each ingredient and its measurement
-  for (let i = 1; i <= 20; i++) {
+  
+  // Create an array of numbers from 1 to 20
+  const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+  
+  // Iterate over each ingredient and its measurement using forEach
+  numbers.forEach(i => {
     const ingredient = product[`strIngredient${i}`];
     const measurement = product[`strMeasure${i}`];
+    
     // Check if both ingredient and measurement exist
     if (ingredient && measurement) {
       // Add the ingredient and measurement to the HTML
       ingredientsHTML += `<p class="ingredients">${measurement} ${ingredient}</p>`;
     } else {
-      // If either ingredient or measurement is missing, break the loop
-      break;
+      // If either ingredient or measurement is missing, do nothing
+      return;
     }
-  }
+  });
+  
   return ingredientsHTML;
 }
-
     }
 
 
