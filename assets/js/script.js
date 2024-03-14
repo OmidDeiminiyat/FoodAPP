@@ -423,3 +423,9 @@ function toggleDialog() {
   var dialog = document.getElementById('dialog1');
   dialog.classList.toggle('hidden');
 }
+
+
+function toggleDialog() {
+  const dialog = document.getElementById('dialog1');
+  dialog.classList.toggle('hidden');
+}
