@@ -406,3 +406,12 @@ function redirectToMain() {
 function redirectToAPI() {
   window.location.href = 'https://www.themealdb.com/api.php';
 }
+
+
+
+
+
+function toggleDialog() {
+  var dialog = document.getElementById('dialog1');
+  dialog.classList.toggle('hidden');
+}
