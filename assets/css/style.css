@@ -131,14 +131,15 @@ h1 {
   background-color:var(--yellow);
 }
 
-
-
 .hidden{
   display: none;
 }
 
+/* TOGGLE DIALOG */
+
 #toggle-dialog {
-  padding: 15px;
+  /* padding: 15px; */
+  padding: 10px 15px;
   background-color: var(--primary); 
   color: #fff; 
   border: none; 
@@ -151,16 +152,6 @@ h1 {
 #toggle-dialog:hover {
   background-color: var(--yellow); 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 .search-results {
