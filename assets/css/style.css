@@ -459,7 +459,7 @@ height: 345px;
 
 #GetCategories ul li {
   display: inline-block;
-  margin-right: 10px; 
+  /* margin-right: 10px;  */
   text-decoration: none;
   color: var(--background);
   padding: 10px 20px;
