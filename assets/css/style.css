@@ -475,4 +475,10 @@ height: 345px;
 }
 
 
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
 

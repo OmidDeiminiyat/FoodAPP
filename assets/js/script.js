@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     no1Container.innerHTML = categories.map(category => `
     <ul onclick="fetchFoodWithCategory(${category.strCategory})" >
-    <li>${category.strCategory}</li>
+    <li >${category.strCategory}</li>
   </ul> 
     `).join('');
   }
