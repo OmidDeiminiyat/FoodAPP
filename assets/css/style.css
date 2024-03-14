@@ -514,9 +514,21 @@ h1 {
   }
   
   #recipe-container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .details img {
+    width: 80%;
+    height: 40%;
+    margin-left: 3.5rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin-left: 8rem ;
   }
 
   .footer-main {
@@ -556,6 +568,22 @@ h1 {
 
   #recipe-container {
     display: block;
+    width: 80%;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+
+  .details img {
+    margin-left: 2.3rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .footer-main {
+    margin-top: 1rem;
   }
 
   .footer-left h2 {
