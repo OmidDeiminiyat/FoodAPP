@@ -197,7 +197,7 @@ function generateIngredients(product) {
     // Check if both ingredient and measurement exist
     if (ingredient && measurement) {
       // Add the ingredient and measurement to the HTML
-      ingredientsHTML += `<p class="ingredient">${measurement} ${ingredient}</p>`;
+      ingredientsHTML += `<p class="ingredients">${measurement} ${ingredient}</p>`;
     } else {
       // If either ingredient or measurement is missing, do nothing
       return;
