@@ -272,6 +272,57 @@ h1 {
   text-align: center;
 }
 
+/*Styling recipe by letter*/
+
+.letter{
+  background-color: whitesmoke;
+  border: 1px solid #F4AA41;;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.letter h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  background-color: #E8820A;
+  margin: 26px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.letter img{
+  width: 330px;
+  height: 330px;
+  border-radius: 10px;
+  margin: 1.8rem;
+  margin-top: 16px;
+}
+ .details p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28px;
+  margin-right: 24px;
+}
+.text1{
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-top: -10px;
+}
+.text2{
+  font-size: 26px;
+  margin-top: -10px;
+}
+.ingredient{
+  width: 345px;
+  height: 73px;
+  background-color: #D9d9d9;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+} 
+
 
 /* FOOTER */  
 
@@ -485,7 +536,6 @@ h1 {
     width: 100%;
     max-width: 100%;
     /* padding: 0 20px; */
- 
   }
 
   .main-header {
