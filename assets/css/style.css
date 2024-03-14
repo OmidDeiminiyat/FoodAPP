@@ -338,6 +338,7 @@ h1 {
 
 .footer-main h2 {
   margin-top: 1rem;
+  margin-left: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -363,6 +364,10 @@ h1 {
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
+}
+
+.footer-left ul li {
+  margin-left: 2rem;
 }
 
 .footer-right {
@@ -426,6 +431,7 @@ h1 {
 .footer-right .social-media-icons {
   margin-top: -3rem;
 }
+
 
 
 /* DIALOG */
