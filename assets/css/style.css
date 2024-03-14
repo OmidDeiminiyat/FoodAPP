@@ -533,3 +533,38 @@ h1 {
     margin-left: 5rem;
   }
 }
+
+/* MOBILE QUERIES */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    margin-left: -5px;
+    margin-right: -5rem;
+    margin-bottom: 2px;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1.2rem;
+  }
+
+  .search-input {
+    margin-top: -1.5rem;
+  }
+
+  #recipe-container {
+    display: block;
+  }
+
+  .footer-left h2 {
+    margin-left: 2rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 2rem;
+  }
+}
