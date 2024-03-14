@@ -457,6 +457,13 @@ height: 345px;
   padding: 0;
 }
 
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
+
 #GetCategories ul li {
   display: inline-block;
   /* margin-right: 10px;  */
@@ -482,3 +489,57 @@ height: 345px;
   margin:0 -5px;
 }
 
+
+
+/* MEDIA QUERIES TABLET */
+
+@media (max-width: 750px) { 
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .main-header {
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    margin-left: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin-left: 6rem;
+  }
+
+  .search-input {
+    width: 80%;
+    margin-top: -10px;
+  }
+  
+  #recipe-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Adjust the gap between recipe items */
+  }
+
+  .footer-main {
+    width: 95%;
+  }
+  
+  .footer-left h2 {
+    margin-left: 5rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 5rem;
+  }
+}
