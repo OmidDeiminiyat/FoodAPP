@@ -457,6 +457,13 @@ height: 345px;
   padding: 0;
 }
 
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
+
 #GetCategories ul li {
   display: inline-block;
   margin-right: 10px; 
@@ -473,6 +480,16 @@ height: 345px;
 #GetCategories ul li:hover {
   background-color: var(--yellow);
 }
+
+
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
+
+
 
 /* MEDIA QUERIES TABLET */
 
