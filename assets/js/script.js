@@ -216,6 +216,9 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 
+
+
+
   function createCategoryView(categories) {
     const no1Container = document.getElementById('GetCategories');
 
@@ -224,20 +227,20 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const ul = document.createElement('ul');
 
-    categories.forEach(category => {
-      const li = document.createElement('li');
-      li.textContent = category.strCategory;
-      ul.appendChild(li);
-    });
-
-    no1Container.appendChild(ul);
+    no1Container.innerHTML = categories.map(category => `
+    <ul onclick="fetchFoodWithCategory(${category.strCategory})" >
+    <li>${category.strCategory}</li>
+  </ul> 
+    `).join('');
   }
 
 
 
 
+
+
+ 
 
 
 
