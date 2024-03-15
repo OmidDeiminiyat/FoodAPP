@@ -664,17 +664,27 @@ h1 {
 /* Omid added for Ingredients view */
 #detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3,1fr);
 }
 #detail img {
-  width: 70%;
-  height: 70%;
-  margin: 0;
+  width: 35%;
+  height: 50%;
+  margin: 10px;
+  margin-left: 45px;
   padding: 0;
-
 }
 #detail p{
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width:750px){
+  #detail {
+    width: 100%;
+    align-items: center;
+  } 
+
 }
