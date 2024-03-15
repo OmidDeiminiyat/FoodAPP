@@ -213,6 +213,8 @@ document.addEventListener("DOMContentLoaded", function() {
           for (let i = 1; i <= 20; i++) { // Assuming there are maximum 20 ingredients
             console.log(foodData);
               const ingredientName = foodData[`strIngredient${i}`];
+              const Mesurment = foodData[`strMeasure${i}`];
+      
     
               
               if (ingredientName) {
@@ -229,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   img.alt = ingredientName;
     
                   const paraf = document.createElement('p');
-                  paraf.textContent = `${ingredientName}`;
+                  paraf.textContent = `${ingredientName}, ${Mesurment}`;
     
     
     
@@ -485,6 +487,7 @@ async function displayIngredientsForFood(foodName) {
       for (let i = 1; i <= 20; i++) { // Assuming there are maximum 20 ingredients
         console.log(foodData);
           const ingredientName = foodData[`strIngredient${i}`];
+          const Mesurment = foodData[`strMeasure${i}`];
 
           
           if (ingredientName) {
@@ -501,7 +504,7 @@ async function displayIngredientsForFood(foodName) {
               img.alt = ingredientName;
 
               const paraf = document.createElement('p');
-              paraf.textContent = `${ingredientName}`;
+              paraf.textContent = `${ingredientName}, ${Mesurment} `;
 
 
 
@@ -593,8 +596,6 @@ function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
 }
-
-
 
 // DIALOG
 function openDialog() {
