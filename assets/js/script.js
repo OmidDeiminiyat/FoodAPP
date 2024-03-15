@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ClearApp();
     ClearSecondApp();
     Clearinte();
-    ShoeInge();
+    
 
     const foodName1 = SearchDetail; 
     getNewOne(foodName1);
@@ -191,16 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
-// 
- function ShoeInge() {
-  const insertInter = document.getElementById('inreTit');
 
-  var h4Element = document.createElement('h2');
-
-  h4Element.textContent = 'Ingredients:';
-  
-  insertInter.appendChild(h4Element);
-}
 
 // Here we fetch ingredients from search result
     async function getNewpp(foodName1) {
@@ -604,10 +595,10 @@ function openMenu() {
 }
 
 // LOG CALLBACK
-function Clearinteback() {
+function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
- Clearinte();
+   Clearinte();
 }
 
 // DIALOG
