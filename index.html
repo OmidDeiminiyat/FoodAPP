@@ -48,24 +48,35 @@
         </section>
         <main>
             <div id="recipe-container">
-            
+                
+            </div>
+        </main>
+        <main>
+            <div id="recipe-container">
+
+                <div id="detail" class="details" >
+                   
+                   
+                </div>
             </div>
         </main>
         <!-- BURGER CONTENT -->
         <section id="burger-content"></section>
+
         
         <!-- FOOTER --> 
         <footer class="footer-main">
             <!-- LEFT -->
             <div class="footer-left">
-                <h2>Sider:</h2>
+                <h2>Pages:</h2>
                 <div class="footer-hr"></div>
                 <ul>
-                    <li>Forside</li>
-                    <li>Om os</li>
-                    <li>Kontakt</li>
+                    <li>Home</li>   
+                    <li>About Us</li>
+                    <li>Contact</li>
                 </ul>
             </div>
+           
             <!-- RIGHT -->
             <div class="footer-right">
                 <div class="footer-content">
@@ -78,7 +89,16 @@
                     <li><img src="assets/images/Vector-2.png" alt="youtube"></li>
                 </ul>
             </div>
+            
         </footer>
+        <!-- DIALOG -->
+        <div id="dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close" onclick="closeDialog()">&times;</span>
+                <button class="home-button" onclick="redirectToMain()">Home</button>
+                <br>
+                <button class="api-button" onclick="redirectToAPI()">API</button>
+                <div id="GetCategories" ></div>
     </div>
 </body>
 </html>

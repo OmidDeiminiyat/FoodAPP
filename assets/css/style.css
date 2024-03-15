@@ -20,18 +20,16 @@ body {
 /* SITE CONTAINER */
 
 .container {
-  margin: 0 auto;
+  margin: 0 auto; 
   max-width: 400px;
 }
-
-.main-header {
+  .main-header {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-}
-
+}  
 
 h1 {
   font-family: "Akshar", sans-serif;
@@ -55,8 +53,6 @@ h1 {
   cursor: pointer;
   /* margin-right: 20px; */
   margin-top: 12px ;
-  /* border: 1px solid #000;
-  border-radius: 50%; */
 }
 
 /* BURGER MENU */
@@ -131,9 +127,31 @@ h1 {
   background-color:var(--yellow);
 }
 
+.hidden{
+  display: none;
+}
+
+/* TOGGLE DIALOG */
+
+#toggle-dialog {
+  /* padding: 15px; */
+  padding: 10px 15px;
+  background-color: var(--primary); 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 10px; 
+
+}
+
+#toggle-dialog:hover {
+  background-color: var(--yellow); 
+}
+
 .search-results {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшил минимальную ширину */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   gap: 20px;
 }
 
@@ -145,7 +163,6 @@ h1 {
 
 .searchMeal img {
   width: 100%;
-  
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   max-height: 200px; 
@@ -255,6 +272,57 @@ h1 {
   text-align: center;
 }
 
+/*Styling recipe by letter*/
+
+.letter{
+  background-color: whitesmoke;
+  border: 1px solid #F4AA41;;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.letter h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  background-color: #E8820A;
+  margin: 26px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.letter img{
+  width: 330px;
+  height: 330px;
+  border-radius: 10px;
+  margin: 1.8rem;
+  margin-top: 16px;
+}
+ .details p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28px;
+  margin-right: 24px;
+}
+.text1{
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-top: -10px;
+}
+.text2{
+  font-size: 26px;
+  margin-top: -10px;
+}
+.ingredient{
+  width: 345px;
+  height: 73px;
+  background-color: #D9d9d9;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+} 
+
 
 /* FOOTER */  
 
@@ -270,6 +338,7 @@ h1 {
 
 .footer-main h2 {
   margin-top: 1rem;
+  margin-left: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -295,6 +364,10 @@ h1 {
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
+}
+
+.footer-left ul li {
+  margin-left: 2rem;
 }
 
 .footer-right {
@@ -357,4 +430,243 @@ h1 {
 
 .footer-right .social-media-icons {
   margin-top: -3rem;
+}
+
+
+
+/* DIALOG */
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.dialog-content {
+  background-color: var(--background);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--stroke);
+  border-radius: 15px;
+  width: 80%;
+}
+
+.close {
+  color: var(--primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--yellow);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dialog-content .home-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dialog-content .home-button:hover {
+  background-color: var(--yellow);
+}
+
+.dialog-content .api-button {
+  background-color: var(--background); 
+  color: var(--stroke);
+  border: 1px solid var(--search);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.allButtons{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+/* BURGER CATEGORY */
+
+#GetCategories {
+  margin-top: 2rem;
+}
+
+#GetCategories ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*Style Category from burger menu*/
+#GetCategories  ul {
+  display: inline-flex;
+  grid-template-columns: repeat(3fr,1fr);
+  margin:0 -5px;
+}
+
+#GetCategories ul li {
+  display: inline-block;
+  margin-right: 10px; 
+  text-decoration: none;
+  color: var(--background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+#GetCategories ul li:hover {
+  background-color: var(--yellow);
+}
+
+/* MEDIA QUERIES TABLET */
+
+@media (max-width: 750px) { 
+  .container {
+    width: 100%;
+    max-width: 100%;
+    /* padding: 0 20px; */
+  }
+
+  .main-header {
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    margin-left: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin-left: 6rem;
+  }
+
+  .search-input {
+    width: 80%;
+    margin-top: -10px;
+  }
+  
+  #recipe-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .details img {
+    width: 80%;
+    height: 40%;
+    margin-left: 3.5rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin-left: 8rem ;
+  }
+
+  .footer-main {
+    width: 95%;
+  }
+  
+  .footer-left h2 {
+    margin-left: 5rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 5rem;
+  }
+}
+
+/* MOBILE QUERIES */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    margin-left: -5px;
+    margin-right: -5rem;
+    margin-bottom: 2px;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1.2rem;
+  }
+
+  .search-input {
+    margin-top: -1.5rem;
+  }
+
+  #recipe-container {
+    display: block;
+    width: 80%;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+
+  .details img {
+    margin-left: 2.3rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .footer-main {
+    margin-top: 1rem;
+  }
+
+  .footer-left h2 {
+    margin-left: 2rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 2rem;
+  }
+}
+
+
+
+/* Omid added for Ingredients view */
+#detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#detail img {
+  width: 70%;
+  height: 70%;
+  margin: 0;
+  padding: 0;
+
+}
+#detail p{
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
