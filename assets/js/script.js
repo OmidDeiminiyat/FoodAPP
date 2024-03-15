@@ -55,6 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function SendId(test) {
     ClearApp();
+    Clearinte();
+
+    const foodName1 = test; 
+    getNewOne(foodName1);
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${test}`;
          
         fetch(url)
@@ -88,17 +92,13 @@ document.addEventListener("DOMContentLoaded", function() {
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
             <p class="text1">Ingredients:</p>
-            <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>, <p onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure2} ${product.strIngredient2}</p>,${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
             
             <p class="text2">Instructions:</p>
-            <p>${product.strInstructions}</p>
+            <p class="text3">${product.strInstructions}</p>
           </div>
         `;
     }
-
-
-
-
 
 
 
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchResultsDiv = document.getElementById('searchResults');
 
   searchInput.addEventListener('input', function() {
+  
       const searchTerm = this.value.trim();
       if (searchTerm === '') {
           searchResultsDiv.innerHTML = ''; 
@@ -139,10 +140,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   // after click on a food we send food Id with onclick function to get detail of specefic food
-
+//Work here
+  
   function CallForsearch(SearchDetail) {
     ClearApp();
     ClearSecondApp();
+    Clearinte();
+
+    const foodName1 = SearchDetail; 
+    getNewOne(foodName1);
+
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${SearchDetail}`;
          
         fetch(url)
@@ -175,43 +182,74 @@ document.addEventListener("DOMContentLoaded", function() {
                                       <h2>${product.strMeal}</h2>
                                       
                                       <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-                                      <p class="text1">Ingredients:</p>
-                                      ${generateIngredients(product)}
+                                     
                                       <p class="text2">Instructions:</p>
                                       <p>${product.strInstructions}</p>
                                     </div>
                                   `;
 
-function generateIngredients(product) {
-  let ingredientsHTML = '';
-  
-  // Create an array of numbers from 1 to 20
-  const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
-  
-  // Iterate over each ingredient and its measurement using forEach
-  numbers.forEach(i => {
-    const ingredient = product[`strIngredient${i}`];
-    const measurement = product[`strMeasure${i}`];
-    
-    // Check if both ingredient and measurement exist
-    if (ingredient && measurement) {
-      // Add the ingredient and measurement to the HTML
-      ingredientsHTML += `<p class="ingredients">${measurement} ${ingredient}</p>`;
-    } else {
-      // If either ingredient or measurement is missing, do nothing
-      return;
-    }
-  });
-  
-  return ingredientsHTML;
-}
     }
 
+// Here we fetch ingredients from search result
+    async function getNewpp(foodName1) {
+      try {
+          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodName1}`);
+          const data = await response.json();
+          return data.meals[0];
+      } catch (error) {
+          console.error('Error fetching ingredients:', error);
+      }
+    }
+    
+    async function getNewOne(foodName1) {
+      const foodData = await getNewpp(foodName1);
+    
+      
+    
+    
+      const ingredientsContainer = document.getElementById('detail');
+    
+      if (foodData) {
+          for (let i = 1; i <= 20; i++) { // Assuming there are maximum 20 ingredients
+            console.log(foodData);
+              const ingredientName = foodData[`strIngredient${i}`];
+    
+              
+              if (ingredientName) {
+              
+                const containerDiv = document.createElement('span');
+                containerDiv.classList.add('container');
+                
+         
+    
+                  const imageUrl = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
+    
+                  const img = document.createElement('img');
+                  img.src = imageUrl;
+                  img.alt = ingredientName;
+    
+                  const paraf = document.createElement('p');
+                  paraf.textContent = `${ingredientName}`;
+    
+    
+    
+                
+                  containerDiv.appendChild(img);
+                  containerDiv.appendChild(paraf);
+                
+                  ingredientsContainer.appendChild(containerDiv);
+              }
+            
+          }
+      }
+    }
 
 
 
 
     
+
+
 
 
 
@@ -248,151 +286,21 @@ document.addEventListener("DOMContentLoaded", function() {
       no1Container.innerHTML = "<p>No categories found.</p>";
       return;
     }
-
+console.log(categories);
 
     no1Container.innerHTML = categories.map(category => `
-    <ul onclick="fetchFoodWithCategory('${category.strCategory}')" >
-    <li >${category.strCategory}</li>
+    <ul>
+    <li onclick="fetchFoodCate('${category.strCategory}')" >${category.strCategory}</li>
   </ul> 
     `).join('');
   }
 
 
 
-  function fetchFoodWithCategory(FetchCate) {
-    ClearApp();
-        const url = `www.themealdb.com/api/json/v1/1/filter.php?c=${FetchCate}`;
-         
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(CategoryData => {
-            displayProductDetails(CategoryData.meals[0]);
-          })
-          .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-          });
-      }
-  
-      function displayProductDetails(product) {
-        const newCont = document.getElementById('recipe-container');
-  
-        console.log(product);
-     
-        if (!product) {
-            newCont.innerHTML = "<p>No product found.</p>";
-          return;
-        }
+
+
+
  
-        newCont.innerHTML = `
-          <div class="details">
-            <h2>${product.strMeal}</h2>
-            
-            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-            <p class="text1">Ingredients:</p>
-            <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>
-             <span onclick="inteFood('${product.strIngredient2}')"> ${product.strMeasure2} ${product.strIngredient2}</span>
-             <span onclick="inteFood('${product.strIngredient3}')">  ${product.strMeasure3} ${product.strIngredient3}</span>
-             <span onclick="inteFood('${product.strIngredient4}')"> ${product.strMeasure4} ${product.strIngredient4}<span>
-               </p>            
-            <p class="text2">Instructions:</p>
-            <p>${product.strInstructions}</p>
-          </div>
-        `;
-    }
-
-  
-    function inteFood() {
-      
-      // Fetch data of meals containing chicken breast
-      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=${inteFood}')
-        .then(response => response.json())
-        .then(data => {
-          const meals = data.meals;
-          if (meals) {
-            const mealList = document.createElement('ul');
-            meals.forEach(meal => {
-              const listItem = document.createElement('li');
-              listItem.textContent = meal.strMeal;
-              mealList.appendChild(listItem);
-            });
-
-
-            const testDiv = document.getElementById('recipe-container');
-            testDiv.innerHTML = ''; // Clear existing content
-
-
-
-            testDiv.appendChild(mealList);
-
-
-
-
-          } else {
-            document.getElementById('test').innerHTML = 'No meals found with: Dealvmvcxlcnbfkg' ;
-
-            
-          }
-        })
-        .catch(error => console.error('Error fetching meals:', error));
-    }
-
-
-
-
-// test
-
-/*
-fetch('https://www.themealdb.com/images/ingredients/Lime.png')
-.then(response => response.blob())
-.then(blob => {
-  const imageUrl = URL.createObjectURL(blob);
-  const limeImage = document.createElement('img');
-  limeImage.src = imageUrl;
-  document.getElementById('test').appendChild(limeImage);
-})
-.catch(error => console.error('Error fetching lime image:', error));
-
-// Fetch data of meals containing chicken breast
-fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
-.then(response => response.json())
-.then(data => {
-  const meals = data.meals;
-  if (meals) {
-    const mealList = document.createElement('ul');
-    meals.forEach(meal => {
-      const listItem = document.createElement('li');
-      listItem.textContent = meal.strMeal;
-      mealList.appendChild(listItem);
-    });
-    document.getElementById('test').appendChild(mealList);
-  } else {
-    document.getElementById('test').innerHTML = 'No meals found with chicken breast.';
-  }
-})
-.catch(error => console.error('Error fetching meals:', error));
-
-
-
-
-*/
-
-
-
-
-
-
-// test
-
-
-
-
-      
-
 
 
 
@@ -409,15 +317,19 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
       const searchResultsDiv = document.getElementById('searchResults');
       searchResultsDiv.innerHTML = '';
   }
+  function Clearinte() {
+    const ingredientsContainer = document.getElementById('detail');
+   ingredientsContainer.innerHTML = '';
+  }
 
 
 
 
 
-  //Omid code 100 get letter and fetch data 
+  // code 100 get letter and fetch data 
   function fetchMealsByFirstLetter(letter) {
     ClearApp()
-    
+    Clearinte();
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
     return fetch(url)
       .then(response => {
@@ -460,7 +372,7 @@ function displayMeals(meals) {
   }
 
   recipeContainer.innerHTML = meals.map(meal => `
-    <div onclick="reDirect('${meal.idMeal}')" class="letter">
+  <div onclick="reDirect('${meal.idMeal}')" class="letter">
       
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}" >
       <h2>${meal.strMeal}</h2>
@@ -468,9 +380,15 @@ function displayMeals(meals) {
   `).join('');
 }
 
+ //  code 100 end
+ // After click on a food from letter we displaye all food with same letter 
+
 
 function reDirect(tenewVersionst) {
+  const foodName = tenewVersionst; 
+  displayIngredientsForFood(foodName);
   ClearApp();
+  Clearinte();
       const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${tenewVersionst}`;
        
       fetch(url)
@@ -488,40 +406,134 @@ function reDirect(tenewVersionst) {
         });
     }
 
+
+
+
+
     function newVerData(product) {
       const newCont = document.getElementById('recipe-container');
 
-      console.log(product);
+     // console.log(product);
    
       if (!product) {
           newCont.innerHTML = "<p>No product found.</p>";
         return;
       }
 
+
       newCont.innerHTML = `
-        <div class="details">
-          <h2>${product.strMeal}</h2>
-          
-          <img src="${product.strMealThumb}" alt="${product.strMeal}" >
-          <p class="text1">Ingredients:</p>
-          <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>, <p onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure2} ${product.strIngredient2}</p>,${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
-          
-          <p class="text2">Instructions:</p>
-          <p>${product.strInstructions}</p>
-        </div>
+      <div class="details">
+    <h2>${product.strMeal}</h2>
+    <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+    <p class="text2">Instructions:</p>
+    <p>${product.strInstructions}</p>
+  </div>
       `;
+  
+// after click on food we display all information of food
+
+
+function LetterGenerateIngeredients(product) {
+let ingredientsHTML = '';
+
+
+const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
+
+numbers.forEach(i => {
+const ingredient = product[`strIngredient${i}`];
+const measurement = product[`strMeasure${i}`];
+
+// console.log(ingredient);
+if (ingredient && measurement) {
+
+ingredientsHTML += `<p class="ingredients">${measurement} ${ingredient}</p>`;
+
+} else {
+
+return;
+}
+});
+
+return ingredientsHTML;
+}
+
+}
+
+
+
+
+async function fetchIngredients(foodName) {
+  try {
+      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodName}`);
+      const data = await response.json();
+      return data.meals[0];
+  } catch (error) {
+      console.error('Error fetching ingredients:', error);
   }
+}
+
+async function displayIngredientsForFood(foodName) {
+  const foodData = await fetchIngredients(foodName);
+
+  
+
+
+  const ingredientsContainer = document.getElementById('detail');
+
+  if (foodData) {
+      for (let i = 1; i <= 20; i++) { // Assuming there are maximum 20 ingredients
+        console.log(foodData);
+          const ingredientName = foodData[`strIngredient${i}`];
+
+          
+          if (ingredientName) {
+          
+            const containerDiv = document.createElement('span');
+            containerDiv.classList.add('container');
+            
+     
+
+              const imageUrl = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
+
+              const img = document.createElement('img');
+              img.src = imageUrl;
+              img.alt = ingredientName;
+
+              const paraf = document.createElement('p');
+              paraf.textContent = `${ingredientName}`;
+
+
+
+            
+              containerDiv.appendChild(img);
+              containerDiv.appendChild(paraf);
+            
+              ingredientsContainer.appendChild(containerDiv);
+          }
+        
+         
+      }
+  }
+}
 
 
 
 
- // Omid code 100 end
+
+
+
+
+
+
+
 
 
   // after click on a food we send food Id with onclick function to get detail of specefic food
 
   function ThirdLink(byLetter) {
     ClearApp();
+    Clearinte();
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${byLetter}`;
          
         fetch(url)
@@ -563,12 +575,7 @@ function reDirect(tenewVersionst) {
         `;
     }
 
-
-
-
-
-
-
+    
 
 
 
@@ -605,4 +612,16 @@ function redirectToMain() {
 
 function redirectToAPI() {
   window.location.href = 'https://www.themealdb.com/api.php';
+}
+
+
+function toggleDialog() {
+  var dialog = document.getElementById('dialog1');
+  dialog.classList.toggle('hidden');
+}
+
+
+function toggleDialog() {
+  const dialog = document.getElementById('dialog1');
+  dialog.classList.toggle('hidden');
 }

@@ -20,18 +20,16 @@ body {
 /* SITE CONTAINER */
 
 .container {
-  margin: 0 auto;
+  margin: 0 auto; 
   max-width: 400px;
 }
-
-.main-header {
+  .main-header {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-}
-
+}  
 
 h1 {
   font-family: "Akshar", sans-serif;
@@ -55,8 +53,6 @@ h1 {
   cursor: pointer;
   /* margin-right: 20px; */
   margin-top: 12px ;
-  /* border: 1px solid #000;
-  border-radius: 50%; */
 }
 
 /* BURGER MENU */
@@ -108,18 +104,13 @@ h1 {
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-left: 17px;
-  align-items: center;
-  margin-top: 3px;
-  
+  gap: 1rem;
 }
 
 .buttons button {
   display: grid;
   width: 90%;
   padding: 5px 10px;
- 
   font-size: 10px;
   border: none;
   border-radius: 5px;
@@ -136,9 +127,31 @@ h1 {
   background-color:var(--yellow);
 }
 
+.hidden{
+  display: none;
+}
+
+/* TOGGLE DIALOG */
+
+#toggle-dialog {
+  /* padding: 15px; */
+  padding: 10px 15px;
+  background-color: var(--primary); 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 10px; 
+
+}
+
+#toggle-dialog:hover {
+  background-color: var(--yellow); 
+}
+
 .search-results {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Уменьшил минимальную ширину */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   gap: 20px;
 }
 
@@ -244,41 +257,73 @@ h1 {
 .text1{
   font-size: 20px;
   border-bottom: 1px solid black;
- 
+  margin-top: -10px;
 }
 .text2{
   font-size: 26px;
+  margin-top: -10px;
 }
 .ingredient{
   width: 345px;
-  height: 120px;
+  height: 73px;
   background-color: #D9d9d9;
   border-radius: 10px;
   margin: 5px;
   text-align: center;
 }
 
- /*SEARCH BY LETTER*/
- .letter{
-  max-width: 400px; 
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001a;
-  text-align: center;
-  margin: 8px; 
- }
-.letter img{
-width: 345px;
-height: 345px;
+/*Styling recipe by letter*/
+
+.letter{
+  background-color: whitesmoke;
+  border: 1px solid #F4AA41;;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 .letter h2{
-  background-color:#E8820A;
+  display: flex;
   justify-content: center;
+  align-items: center;
   color: whitesmoke;
-  border-radius: 8px;
-  font-size: larger;
+  background-color: #E8820A;
+  margin: 26px;
+  border-radius: 5px;
+  font-size: 20px;
 }
+.letter img{
+  width: 330px;
+  height: 330px;
+  border-radius: 10px;
+  margin: 1.8rem;
+  margin-top: 16px;
+}
+ .details p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28px;
+  margin-right: 24px;
+}
+.text1{
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-top: -10px;
+}
+.text2{
+  font-size: 26px;
+  margin-top: -10px;
+}
+.ingredient{
+  width: 345px;
+  height: 73px;
+  background-color: #D9d9d9;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+} 
+
+
 /* FOOTER */  
 
 .footer-main {
@@ -293,6 +338,7 @@ height: 345px;
 
 .footer-main h2 {
   margin-top: 1rem;
+  margin-left: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -318,6 +364,10 @@ height: 345px;
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
+}
+
+.footer-left ul li {
+  margin-left: 2rem;
 }
 
 .footer-right {
@@ -382,6 +432,8 @@ height: 345px;
   margin-top: -3rem;
 }
 
+
+
 /* DIALOG */
 .dialog {
   display: none;
@@ -424,7 +476,7 @@ height: 345px;
   color: white;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px; 
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -444,8 +496,10 @@ height: 345px;
   cursor: pointer;
   font-size: 16px;
 }
-
-
+.allButtons{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
 /* BURGER CATEGORY */
 
 #GetCategories {
@@ -487,7 +541,7 @@ height: 345px;
   .container {
     width: 100%;
     max-width: 100%;
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
 
   .main-header {
@@ -516,9 +570,21 @@ height: 345px;
   }
   
   #recipe-container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .details img {
+    width: 80%;
+    height: 40%;
+    margin-left: 3.5rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin-left: 8rem ;
   }
 
   .footer-main {
@@ -532,4 +598,75 @@ height: 345px;
   .footer-left ul li {
     margin-left: 5rem;
   }
+}
+
+/* MOBILE QUERIES */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    margin-left: -5px;
+    margin-right: -5rem;
+    margin-bottom: 2px;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  #burger-icon {
+    margin-top: 1.2rem;
+  }
+
+  .search-input {
+    margin-top: -1.5rem;
+  }
+
+  #recipe-container {
+    display: block;
+    width: 80%;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+
+  .details img {
+    margin-left: 2.3rem;
+  }
+
+  .details {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .footer-main {
+    margin-top: 1rem;
+  }
+
+  .footer-left h2 {
+    margin-left: 2rem;
+  }
+
+  .footer-left ul li {
+    margin-left: 2rem;
+  }
+}
+
+
+
+/* Omid added for Ingredients view */
+#detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#detail img {
+  width: 70%;
+  height: 70%;
+  margin: 0;
+  padding: 0;
+
+}
+#detail p{
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
