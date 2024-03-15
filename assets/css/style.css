@@ -581,9 +581,9 @@ h1 {
   }
 
   .letter img {
-    width: 80%;
-    height: 40%;
-    margin-left: 3.5rem;
+    width: 90%;
+    height: 50%;
+    /* margin-left: 3.5rem; */
   }
 
   .details {
@@ -636,10 +636,10 @@ h1 {
   /* .letter {
     display: none;
   } */
-
-  .details img {
+  
+   .details img {
     margin-left: 4rem;
-  }
+  } 
 
   .details {
     max-width: 100%;
