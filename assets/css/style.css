@@ -576,7 +576,11 @@ h1 {
     gap: 20px;
   }
 
-  .details img {
+  .letter {
+    width: 100%;     
+  }
+
+  .letter img {
     width: 80%;
     height: 40%;
     margin-left: 3.5rem;
@@ -624,10 +628,14 @@ h1 {
 
   #recipe-container {
     display: block;
-    width: 80%;
-    margin-left: 3rem;
+    width: 100%;
+    /* margin-left: 3rem; */
     margin-top: 1rem;
   }
+
+  /* .letter {
+    display: none;
+  } */
 
   .details img {
     margin-left: 2.3rem;
