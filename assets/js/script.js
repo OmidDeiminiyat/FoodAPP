@@ -575,6 +575,9 @@ async function displayIngredientsForFood(foodName) {
         `;
     }
 
+    
+
+
 
 // BURGER MENU
 
