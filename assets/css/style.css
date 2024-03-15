@@ -663,6 +663,7 @@ h1 {
 
 /* Omid added for Ingredients view */
 #detail {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3,1fr);
 }
@@ -681,10 +682,8 @@ h1 {
   font-weight: 600;
 }
 
-@media (max-width:750px){
+ @media (min-width:600px){
   #detail {
-    width: 100%;
-    align-items: center;
+    width: 400px;
   } 
-
-}
+}  
