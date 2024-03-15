@@ -595,6 +595,7 @@ function openMenu() {
 function LogoCallback() {
   ClearApp();
   fetchRandomMeals(6);
+    Clearinte();
 }
 
 // DIALOG
