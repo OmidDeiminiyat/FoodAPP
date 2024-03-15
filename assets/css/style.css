@@ -332,7 +332,7 @@ h1 {
   background-color: var(--primary);
   border-radius: 6px;
   padding: 10px;
-  width: 95%;
+  width: 90%;
   margin: auto;
 }
 
@@ -648,7 +648,8 @@ h1 {
 
   .footer-main {
     margin-top: 1rem;
-    width: 96%;
+    margin-left: 14px;
+    width: 88%;
   }
 
   .footer-left h2 {
