@@ -88,14 +88,13 @@ document.addEventListener("DOMContentLoaded", function() {
             
             <img src="${product.strMealThumb}" alt="${product.strMeal}" >
             <p class="text1">Ingredients:</p>
-            <p class="ingredient">${product.strMeasure1} ${product.strIngredient1},${product.strMeasure2} ${product.strIngredient2},${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+            <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>, <p onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure2} ${product.strIngredient2}</p>,${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
             
             <p class="text2">Instructions:</p>
             <p>${product.strInstructions}</p>
           </div>
         `;
     }
-
 
 
 
@@ -252,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     no1Container.innerHTML = categories.map(category => `
-    <ul onclick="fetchFoodWithCategory(${category.strCategory})" >
+    <ul onclick="fetchFoodWithCategory('${category.strCategory}')" >
     <li >${category.strCategory}</li>
   </ul> 
     `).join('');
@@ -260,10 +259,140 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
+  function fetchFoodWithCategory(FetchCate) {
+    ClearApp();
+        const url = `www.themealdb.com/api/json/v1/1/filter.php?c=${FetchCate}`;
+         
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(CategoryData => {
+            displayProductDetails(CategoryData.meals[0]);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+      }
+  
+      function displayProductDetails(product) {
+        const newCont = document.getElementById('recipe-container');
+  
+        console.log(product);
+     
+        if (!product) {
+            newCont.innerHTML = "<p>No product found.</p>";
+          return;
+        }
  
+        newCont.innerHTML = `
+          <div class="details">
+            <h2>${product.strMeal}</h2>
+            
+            <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+            <p class="text1">Ingredients:</p>
+            <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>
+             <span onclick="inteFood('${product.strIngredient2}')"> ${product.strMeasure2} ${product.strIngredient2}</span>
+             <span onclick="inteFood('${product.strIngredient3}')">  ${product.strMeasure3} ${product.strIngredient3}</span>
+             <span onclick="inteFood('${product.strIngredient4}')"> ${product.strMeasure4} ${product.strIngredient4}<span>
+               </p>            
+            <p class="text2">Instructions:</p>
+            <p>${product.strInstructions}</p>
+          </div>
+        `;
+    }
+
+  
+    function inteFood() {
+      
+      // Fetch data of meals containing chicken breast
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=${inteFood}')
+        .then(response => response.json())
+        .then(data => {
+          const meals = data.meals;
+          if (meals) {
+            const mealList = document.createElement('ul');
+            meals.forEach(meal => {
+              const listItem = document.createElement('li');
+              listItem.textContent = meal.strMeal;
+              mealList.appendChild(listItem);
+            });
+
+
+            const testDiv = document.getElementById('recipe-container');
+            testDiv.innerHTML = ''; // Clear existing content
+
+
+
+            testDiv.appendChild(mealList);
+
+
+
+
+          } else {
+            document.getElementById('test').innerHTML = 'No meals found with: Dealvmvcxlcnbfkg' ;
+
+            
+          }
+        })
+        .catch(error => console.error('Error fetching meals:', error));
+    }
+
+
+
+
+// test
+
+/*
+fetch('https://www.themealdb.com/images/ingredients/Lime.png')
+.then(response => response.blob())
+.then(blob => {
+  const imageUrl = URL.createObjectURL(blob);
+  const limeImage = document.createElement('img');
+  limeImage.src = imageUrl;
+  document.getElementById('test').appendChild(limeImage);
+})
+.catch(error => console.error('Error fetching lime image:', error));
+
+// Fetch data of meals containing chicken breast
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
+.then(response => response.json())
+.then(data => {
+  const meals = data.meals;
+  if (meals) {
+    const mealList = document.createElement('ul');
+    meals.forEach(meal => {
+      const listItem = document.createElement('li');
+      listItem.textContent = meal.strMeal;
+      mealList.appendChild(listItem);
+    });
+    document.getElementById('test').appendChild(mealList);
+  } else {
+    document.getElementById('test').innerHTML = 'No meals found with chicken breast.';
+  }
+})
+.catch(error => console.error('Error fetching meals:', error));
+
+
+
+
+*/
+
+
+
+
+
+
+// test
+
+
+
+
+      
+
 
 
 
@@ -331,13 +460,60 @@ function displayMeals(meals) {
   }
 
   recipeContainer.innerHTML = meals.map(meal => `
-    <div class="letter">
+    <div onclick="reDirect('${meal.idMeal}')" class="letter">
       
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}" >
       <h2>${meal.strMeal}</h2>
     </div>
   `).join('');
 }
+
+
+function reDirect(tenewVersionst) {
+  ClearApp();
+      const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${tenewVersionst}`;
+       
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(letterDataSend => {
+          newVerData(letterDataSend.meals[0]);
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+    }
+
+    function newVerData(product) {
+      const newCont = document.getElementById('recipe-container');
+
+      console.log(product);
+   
+      if (!product) {
+          newCont.innerHTML = "<p>No product found.</p>";
+        return;
+      }
+
+      newCont.innerHTML = `
+        <div class="details">
+          <h2>${product.strMeal}</h2>
+          
+          <img src="${product.strMealThumb}" alt="${product.strMeal}" >
+          <p class="text1">Ingredients:</p>
+          <p class="ingredient"> <span onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure1} ${product.strIngredient1}</span>, <p onclick="inteFood('${product.strIngredient1}')"> ${product.strMeasure2} ${product.strIngredient2}</p>,${product.strMeasure3} ${product.strIngredient3}, ${product.strMeasure4} ${product.strIngredient4}   </p>
+          
+          <p class="text2">Instructions:</p>
+          <p>${product.strInstructions}</p>
+        </div>
+      `;
+  }
+
+
+
 
  // Omid code 100 end
 
